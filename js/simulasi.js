@@ -201,12 +201,14 @@ Konsultasi via WhatsApp
 
 `;
 
-document.getElementById("hasil").innerHTML=hasil;
+const hasilBox = document.getElementById("hasil");
 
-document.getElementById("hasil").scrollIntoView({
+hasilBox.innerHTML = hasil;
 
-behavior:"smooth"
+hasilBox.classList.add("show");
 
+hasilBox.scrollIntoView({
+    behavior: "smooth"
 });
 
 });
