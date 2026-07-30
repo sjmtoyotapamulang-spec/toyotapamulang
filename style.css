@@ -2381,3 +2381,23 @@ header.hide{
         opacity:0;
     }
 }
+.spec-list{
+    margin:20px 0;
+    padding:0;
+    list-style:none;
+}
+
+.spec-list li{
+    padding:8px 0;
+    font-size:.95rem;
+    color:#555;
+    border-bottom:1px solid #eee;
+}
+
+.price small{
+    display:block;
+    margin-top:8px;
+    color:#EB0A1E;
+    font-weight:600;
+    font-size:.9rem;
+}
