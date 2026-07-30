@@ -2017,3 +2017,55 @@ button,
 /* ===========================
    END PART 4
 =========================== */
+/* ==========================================
+   HASIL SIMULASI
+========================================== */
+
+.hasil-simulasi{
+    margin-top:40px;
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    border:1px solid #eee;
+    display:none;
+}
+
+.hasil-simulasi.show{
+    display:block;
+}
+
+.hasil-simulasi h2{
+    color:#EB0A1E;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.hasil-simulasi table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.hasil-simulasi td{
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+    font-size:16px;
+}
+
+.hasil-simulasi td:first-child{
+    color:#666;
+    width:45%;
+}
+
+.hasil-simulasi td:last-child{
+    font-weight:600;
+    color:#111;
+}
+
+.hasil-simulasi strong{
+    color:#EB0A1E;
+}
+
+.hasil-simulasi .btn{
+    margin-top:25px;
+}
