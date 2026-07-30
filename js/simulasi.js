@@ -212,3 +212,13 @@ hasilBox.scrollIntoView({
 });
 
 });
+const mobilSelect = document.getElementById("mobil");
+const hargaInput = document.getElementById("harga");
+
+function updateHarga(){
+    const harga = hargaMobil[mobilSelect.value];
+    hargaInput.value = rupiah(harga);
+}
+
+mobilSelect.addEventListener("change", updateHarga);
+updateHarga();
