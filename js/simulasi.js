@@ -7,7 +7,7 @@
 
 const hargaMobil = {
 
-    "Agya": 2017000000,
+    "Agya": 201700000,
 
     "Calya": 197300000,
 
