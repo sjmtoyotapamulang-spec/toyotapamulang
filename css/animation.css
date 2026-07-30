@@ -1,0 +1,460 @@
+/* ==========================================================
+   TOYOTA PAMULANG PREMIUM V6
+   ANIMATION.CSS
+==========================================================*/
+
+/* ==========================================
+   DEFAULT
+========================================== */
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.zoom-in,
+.zoom-out{
+
+    opacity:0;
+
+    transition:all .8s ease;
+
+    will-change:transform,opacity;
+
+}
+
+/* ==========================================
+   FADE UP
+========================================== */
+
+.fade-up{
+
+    transform:translateY(60px);
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   FADE DOWN
+========================================== */
+
+.fade-down{
+
+    transform:translateY(-60px);
+
+}
+
+.fade-down.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   FADE LEFT
+========================================== */
+
+.fade-left{
+
+    transform:translateX(-60px);
+
+}
+
+.fade-left.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================
+   FADE RIGHT
+========================================== */
+
+.fade-right{
+
+    transform:translateX(60px);
+
+}
+
+.fade-right.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================
+   ZOOM IN
+========================================== */
+
+.zoom-in{
+
+    transform:scale(.85);
+
+}
+
+.zoom-in.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+   ZOOM OUT
+========================================== */
+
+.zoom-out{
+
+    transform:scale(1.15);
+
+}
+
+.zoom-out.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+   DELAY
+========================================== */
+
+.delay-1{
+
+    transition-delay:.15s;
+
+}
+
+.delay-2{
+
+    transition-delay:.30s;
+
+}
+
+.delay-3{
+
+    transition-delay:.45s;
+
+}
+
+.delay-4{
+
+    transition-delay:.60s;
+
+}
+
+.delay-5{
+
+    transition-delay:.75s;
+
+}
+
+/* ==========================================
+   FLOAT
+========================================== */
+
+.float{
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+   PULSE
+========================================== */
+
+.pulse{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   BOUNCE
+========================================== */
+
+.bounce{
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        transform:translateY(-10px);
+
+    }
+
+    60%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+/* ==========================================
+   ROTATE
+========================================== */
+
+.rotate{
+
+    animation:rotate 15s linear infinite;
+
+}
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   SHAKE
+========================================== */
+
+.shake:hover{
+
+    animation:shake .5s;
+
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+
+    20%{transform:translateX(-4px);}
+
+    40%{transform:translateX(4px);}
+
+    60%{transform:translateX(-4px);}
+
+    80%{transform:translateX(4px);}
+
+    100%{transform:translateX(0);}
+
+}
+
+/* ==========================================
+   BUTTON HOVER
+========================================== */
+
+.btn-primary,
+.btn-secondary{
+
+    transition:all .35s ease;
+
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.service-card,
+.why-card,
+.car-card,
+.team-card,
+.counter-box,
+.process-card,
+.vision-card,
+.testimonial-card{
+
+    transition:all .35s ease;
+
+}
+
+.service-card:hover,
+.why-card:hover,
+.car-card:hover,
+.team-card:hover,
+.counter-box:hover,
+.process-card:hover,
+.vision-card:hover,
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ==========================================
+   IMAGE ZOOM
+========================================== */
+
+.hero-image img,
+.about-image img,
+.team-image img,
+.car-image img{
+
+    transition:transform .5s ease;
+
+}
+
+.hero-image:hover img,
+.about-image:hover img,
+.team-image:hover img,
+.car-image:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+.floating-whatsapp{
+
+    animation:waFloat 2s infinite;
+
+}
+
+@keyframes waFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+#backToTop{
+
+    transition:all .3s ease;
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ==========================================
+   PRELOADER
+========================================== */
+
+#preloader{
+
+    transition:opacity .5s ease,
+               visibility .5s ease;
+
+}
+
+#preloader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+/* ==========================================
+   END OF FILE
+========================================== */
