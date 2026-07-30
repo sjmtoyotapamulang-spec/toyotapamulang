@@ -1,66 +1,212 @@
-/* ==========================================================
-   TOYOTA PAMULANG PREMIUM V6
-   SIMULASI.JS
-========================================================== */
+// ===========================================
+// TOYOTA PAMULANG
+// SIMULASI KREDIT
+// ===========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+// Harga OTR
 
-    const form = document.getElementById("simulasiForm");
+const hargaMobil = {
 
-    if (!form) return;
+    "Agya": 173200000,
 
-    form.addEventListener("submit", function (e) {
+    "Calya": 171600000,
 
-        e.preventDefault();
+    "Avanza": 244200000,
 
-        const harga = parseFloat(document.getElementById("harga").value);
-        const dpPersen = parseFloat(document.getElementById("dp").value);
-        const tenor = parseInt(document.getElementById("tenor").value);
-        const bunga = parseFloat(document.getElementById("bunga").value);
+    "Veloz": 303000000,
 
-        if (isNaN(harga) || isNaN(dpPersen) || isNaN(tenor) || isNaN(bunga)) {
+    "Raize": 277800000,
 
-            alert("Silakan lengkapi semua data.");
+    "Rush": 316300000,
 
-            return;
+    "Yaris Cross": 440600000,
 
-        }
+    "Innova Reborn": 391300000,
 
-        // DP
-        const dpNominal = harga * (dpPersen / 100);
+    "Innova Zenix": 475400000,
 
-        // Pinjaman
-        const pinjaman = harga - dpNominal;
+    "Fortuner": 794600000,
 
-        // Total bunga
-        const totalBunga = pinjaman * (bunga / 100) * tenor;
+    "Hilux Rangga": 193700000,
 
-        // Total pembayaran
-        const totalBayar = pinjaman + totalBunga;
+    "Hiace": 560000000,
 
-        // Cicilan
-        const cicilan = totalBayar / (tenor * 12);
+    "Hilux Double Cabin": 470000000,
 
-        document.getElementById("hasilHarga").textContent =
-            "Rp " + harga.toLocaleString("id-ID");
+    "Hilux Single Cabin": 305000000,
 
-        document.getElementById("hasilDP").textContent =
-            "Rp " + dpNominal.toLocaleString("id-ID");
+    "Hilux Travo": 420000000,
 
-        document.getElementById("hasilPinjaman").textContent =
-            "Rp " + pinjaman.toLocaleString("id-ID");
+    "Land Cruiser": 2617000000,
 
-        document.getElementById("hasilCicilan").textContent =
-            "Rp " + Math.round(cicilan).toLocaleString("id-ID") + " / Bulan";
+    "Alphard": 1737400000,
 
-        document.getElementById("hasil").style.display = "block";
+    "Vellfire": 1850000000,
 
-        document.getElementById("hasil").scrollIntoView({
+    "Voxy": 629000000
 
-            behavior: "smooth"
+};
 
-        });
+// Format Rupiah
 
-    });
+function rupiah(angka){
+
+    return "Rp " + angka.toLocaleString("id-ID");
+
+}
+
+document
+.getElementById("simulasiForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const mobil=document.getElementById("mobil").value;
+
+const dpPersen=parseFloat(document.getElementById("dp").value);
+
+const tenor=parseInt(document.getElementById("tenor").value);
+
+const bunga=parseFloat(document.getElementById("bunga").value);
+
+const harga=hargaMobil[mobil];
+
+if(!harga){
+
+alert("Harga mobil belum tersedia.");
+
+return;
+
+}
+
+const dp=harga*(dpPersen/100);
+
+const pinjaman=harga-dp;
+
+const bungaTotal=pinjaman*(bunga/100)*tenor;
+
+const totalBayar=pinjaman+bungaTotal;
+
+const cicilan=totalBayar/(tenor*12);
+
+const hasil=`
+
+<h2>Hasil Simulasi</h2>
+
+<table>
+
+<tr>
+
+<td>Mobil</td>
+
+<td><strong>${mobil}</strong></td>
+
+</tr>
+
+<tr>
+
+<td>Harga OTR</td>
+
+<td>${rupiah(harga)}</td>
+
+</tr>
+
+<tr>
+
+<td>DP (${dpPersen}%)</td>
+
+<td>${rupiah(dp)}</td>
+
+</tr>
+
+<tr>
+
+<td>Pinjaman</td>
+
+<td>${rupiah(pinjaman)}</td>
+
+</tr>
+
+<tr>
+
+<td>Tenor</td>
+
+<td>${tenor} Tahun</td>
+
+</tr>
+
+<tr>
+
+<td>Bunga Flat</td>
+
+<td>${bunga}% / Tahun</td>
+
+</tr>
+
+<tr>
+
+<td>Total Bayar</td>
+
+<td>${rupiah(totalBayar)}</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Cicilan / Bulan</strong></td>
+
+<td>
+
+<strong style="color:#EB0A1E;font-size:22px;">
+
+${rupiah(Math.round(cicilan))}
+
+</strong>
+
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<a
+
+class="btn btn-primary"
+
+target="_blank"
+
+href="https://wa.me/6281234567890?text=${encodeURIComponent(
+
+`Halo Toyota Pamulang,
+
+Saya ingin konsultasi kredit.
+
+Mobil : ${mobil}
+
+Harga : ${rupiah(harga)}
+
+DP : ${rupiah(dp)}
+
+Tenor : ${tenor} Tahun
+
+Estimasi Cicilan : ${rupiah(Math.round(cicilan))}/bulan`
+
+)}">
+
+Konsultasi via WhatsApp
+
+</a>
+
+`;
+
+document.getElementById("hasil").innerHTML=hasil;
+
+document.getElementById("hasil").scrollIntoView({
+
+behavior:"smooth"
+
+});
 
 });
